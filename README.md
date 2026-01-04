@@ -33,9 +33,9 @@ Furnicom is a web-based platform for buying and selling furniture, including cus
 
 
 ##  How to Run
+
 1.Clone the repository: git clone https://github.com/Abhiramiramesh/Furnicom.git
-2.Navigate to project directory: cd Furnicom
-3.Activate virtual environment: env\Scripts\activate 
-4.Install requirements: pip install -r requirements.txt
-5.Run Django server: python manage.py runserver
-6.Open browser at http://127.0.0.1:8000
+2.Navigate to project directory
+3.Install requirements: pip install -r requirements.txt
+4.Run Django server: python manage.py runserver
+5.Open browser at http://127.0.0.1:8000/
