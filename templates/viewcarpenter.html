@@ -1,0 +1,69 @@
+{% load static%} 
+{% include 'header.html' %} 
+<h2>products</h2>
+<div class="page-heading header-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Carpenters</h3>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+       
+
+      </div>
+    </div>
+  </div>
+</div>
+<div style="align-items: flex-end;">
+<a href="{% url 'addcarpenter' %}" class="btn btn-primary" >Add carpenter</a>
+</div>
+<div class="contact-page section">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="right-content">
+                <table class="table table-bordered table-strippped table-lg table-info">
+                    <tr>
+                      <th>carpenters</th>
+                      <th>email</th>
+                      <th>phone no</th>
+                      <th>delete</th>
+                      <th>update</th>
+                    </tr>
+                    {% for i in carpenter %}
+                    <tr>
+                      <td>{{i.fullname}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.phone}}</td>
+                      
+
+
+                   <td><a href="{% url 'delete' i.id  %}">delete</a></td>
+                   <td><a href="{% url 'editcarpenter' i.id  %}">edit</a></td>
+                    </tr>
+                    {% endfor %}
+                  
+                    
+                  </table>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  
+                  
+                  </footer>
+                  
+                  <!-- Scripts -->
+                  <!-- Bootstrap core JavaScript -->
+                  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+                  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+                  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+                  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+                  <script src="{% static 'assets/js/counter.js' %}"></script>
+                  <script src="{% static 'assets/js/custom.js' %}"></script>
+                  
+                  </body>
+                  </html>

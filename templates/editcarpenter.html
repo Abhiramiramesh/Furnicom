@@ -1,0 +1,62 @@
+{% load static%} 
+{% include 'header.html' %} 
+<div class="page-heading header-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Carpenters</h3>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+       
+
+      </div>
+    </div>
+  </div>
+</div>
+<div style="align-items: flex-end;">
+
+</div>
+<div class="contact-page section">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="right-content">
+<form method="post">
+    {% csrf_token %}
+    <label>Full Name:</label>
+    <input type="text" name="carpenter" value="{{ carpenter.fullname }}"><br><br>
+  
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ carpenter.email }}"><br><br>
+  
+    <label>Phone:</label>
+    <input type="text" name="phoneno" value="{{ carpenter.phone }}" pattern = "[0-9]{10}"><br><br>
+  
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Enter new password if you want"><br><br>
+  
+    <button type="submit">Save Changes</button>
+    <a href="{% url 'viewcarpenter' %}">Cancel</a>
+  </form>
+</div>
+</div>
+</div>
+</div>
+
+
+</footer>
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.min.js' %}"></script>
+<script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'assets/js/counter.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+
+</body>
+</html>
